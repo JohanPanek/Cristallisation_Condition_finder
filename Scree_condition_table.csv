@@ -1,0 +1,481 @@
+﻿Well,Tube,Salt,Buffer ,Precipitant,Screen
+A1,1,0.02 M Calcium chloride dihydrate,0.1 M Sodium acetate pH 4.6,30 % v/v MPD,Structure
+A2,2,0.2 M Ammonium acetate,0.1 M Sodium acetate pH 4.6,30 % w/v PEG 4000,Structure
+A3,3,0.2 M Ammonium sulfate,0.1 M Sodium acetate pH 4.6,25 % w/v PEG 4000,Structure
+A4,4,2.0 M Sodium formate,0.1 M Sodium acetate pH 4.6,None,Structure
+A5,5,2.0 M Ammonium sulfate,0.1 M Sodium acetate pH 4.6,None,Structure
+A6,6,None,0.1 M Sodium acetate pH 4.6,8 % w/v PEG 4000,Structure
+A7,7,0.2 M Ammonium acetate,0.1 M Sodium citrate pH 5.6,30 % w/v PEG 4000,Structure
+A8,8,0.2 M Ammonium acetate,0.1 M Sodium citrate pH 5.6,30 % v/v MPD,Structure
+A9,9,None,0.1 M Sodium citrate pH 5.6,20 % w/v PEG 4000 / 20 % v/v 2-Propanol,Structure
+A10,10,1.0 M Ammonium phosphate monobasic,0.1 M Sodium citrate pH 5.6,None,Structure
+A11,11,0.2 M Calcium chloride dihydrate,0.1 M Sodium acetate pH 4.6,20 % v/v 2-Propanol,Structure
+A12,12,1.4 M Sodium acetate trihydrate,0.1 M Sodium cacodylate pH 6.5,None,Structure
+B1,13,0.2 M Sodium citrate tribasic dihydrate,0.1 M Sodium cacodylate pH 6.5,30 % v/v 2-Propanol,Structure
+B2,14,0.2 M Ammonium sulfate,0.1 M Sodium cacodylate pH 6.5,30 % w/v PEG 8000,Structure
+B3,15,0.2 M Magnesium acetate tetrahydrate,0.1 M Sodium cacodylate pH 6.5,20 % w/v PEG 8000,Structure
+B4,16,0.2 M Magnesium acetate tetrahydrate,0.1 M Sodium cacodylate pH 6.5,30 % v/v MPD,Structure
+B5,17,1.0 M Sodium acetate trihydrate,0.1 M Imidazole pH 6.5,None,Structure
+B6,18,0.2 M Sodium acetate trihydrate,0.1 M Sodium cacodylate pH 6.5,30 % w/v PEG 8000,Structure
+B7,19,0.2 M Zinc acetate dihydrate,0.1 M Sodium cacodylate pH 6.5,18 % w/v PEG 8000,Structure
+B8,20,0.2 M Calcium acetate hydrate,0.1 M Sodium cacodylate pH 6.5,18 % w/v PEG 8000,Structure
+B9,21,0.2 M Sodium citrate tribasic dihydrate,0.1 M Sodium HEPES pH 7.5,30 % v/v MPD,Structure
+B10,22,0.2 M Magnesium chloride hexahydrate,0.1 M Sodium HEPES pH 7.5,30 % v/v 2-Propanol,Structure
+B11,23,0.2 M Calcium chloride dihydrate,0.1 M Sodium HEPES pH 7.5,28 % v/v PEG 400,Structure
+B12,24,0.2 M Magnesium chloride hexahydrate,0.1 M Sodium HEPES pH 7.5,30 % v/v PEG 400,Structure
+C1,25,0.2 M Sodium citrate tribasic dihydrate,0.1 M Sodium HEPES pH 7.5,20 % v/v 2-Propanol,Structure
+C2,26,0.8 M Potassium sodium tartrate tetrahydrate,0.1 M Sodium HEPES pH 7.5,None,Structure
+C3,27,1.5 M Lithium sulfate,0.1 M Sodium HEPES pH 7.5,None,Structure
+C4,28,0.8 M Sodium phosphate monobasic / 0.8 M Potassium phosphate monobasic,0.1 M Sodium HEPES pH 7.5,None,Structure
+C5,29,1.4 M Sodium citrate tribasic dihydrate,0.1 M Sodium HEPES pH 7.5,None,Structure
+C6,30,2.0 M Ammonium sulfate,0.1 M Sodium HEPES pH 7.5,2 % v/v PEG 400,Structure
+C7,31,None,0.1 M Sodium HEPES pH 7.5,20 % w/v PEG 4000 / 10 % v/v 2-Propanol,Structure
+C8,32,2.0 M Ammonium sulfate,0.1 M Tris pH 8.5,None,Structure
+C9,33,0.2 M Magnesium chloride hexahydrate,0.1 M Tris pH 8.5,30 % w/v PEG 4000,Structure
+C10,34,0.2 M Sodium citrate tribasic dihydrate,0.1 M Tris pH 8.5,30 % v/v PEG 400,Structure
+C11,35,0.2 M Lithium sulfate,0.1 M Tris pH 8.5,30 % w/v PEG 4000,Structure
+C12,36,0.2 M Ammonium acetate,0.1 M Tris pH 8.5,30 % v/v 2-Propanol,Structure
+D1,37,0.2 M Sodium acetate trihydrate,0.1 M Tris pH 8.5,30 % w/v PEG 4000,Structure
+D2,38,None,0.1 M Tris pH 8.5,8 % w/v PEG 8000,Structure
+D3,39,2.0 M Ammonium phosphate monobasic,0.1 M Tris pH 8.5,None,Structure
+D4,40,0.4 M Potassium sodium tartrate tetrahydrate,None,None,Structure
+D5,41,0.4 M Ammonium phosphate monobasic,None,None,Structure
+D6,42,0.2 M Ammonium sulfate,None,30 % w/v PEG 8000,Structure
+D7,43,0.2 M Ammonium sulfate,None,30 % w/v PEG 4000,Structure
+D8,44,2.0 M Ammonium sulfate,None,None,Structure
+D9,45,4.0 M Sodium formate,None,None,Structure
+D10,46,0.05 M Potassium phosphate monobasic,None,20 % w/v PEG 8000,Structure
+D11,47,None,None,30 % w/v PEG 1500,Structure
+D12,48,0.2 M Magnesium formate dihydrate,None,None,Structure
+E1,49,0.1 M Sodium chloride,0.1 M BICINE pH 9.0,30 % v/v PEG 500 MME,Structure
+E2,50,2.0 M Magnesium chloride hexahydrate,0.1 M BICINE pH 9.0,None,Structure
+E3,51,None,0.1 M BICINE pH 9.0,"10 % w/v PEG 20000, 2 % v/v 1,4-Dioxane",Structure
+E4,52,0.2 M Magnesium chloride hexahydrate,0.1 M Tris pH 8.5,"3.4 M 1,6-Hexanediol",Structure
+E5,53,None,0.1 M Tris pH 8.5,25 % v/v tert-Butanol,Structure
+E6,54,"1.0 M Lithium sulfate, 0.01 M Nickel(II) chloride hexahydrate",0.1 M Tris pH 8.5,None,Structure
+E7,55,1.5 M Ammonium sulfate,0.1 M Tris pH 8.5,12 % v/v Glycerol,Structure
+E8,56,0.2 M Ammonium phosphate monobasic,0.1 M Tris pH 8.5,50 % v/v MPD,Structure
+E9,57,None,0.1 M Tris pH 8.5,20 % v/v Ethanol,Structure
+E10,58,0.01 M Nickel(II) chloride hexahydrate,0.1 M Tris pH 8.5,20 % w/v PEG 2000 MME,Structure
+E11,59,0.5 M Ammonium sulfate,0.1 M Sodium HEPES pH 7.5,30 % v/v MPD,Structure
+E12,60,None,0.1 M Sodium HEPES pH 7.5,"10 % w/v PEG 6000, 5 % v/v MPD",Structure
+F1,61,None,0.1 M Sodium HEPES pH 7.5,20 % v/v Jeffamine® M-600,Structure
+F2,62,"1.6 M Ammonium sulfate, 0.1 M Sodium chloride",0.1 M Sodium HEPES pH 7.5,None,Structure
+F3,63,2.0 M Ammonium formate,0.1 M Sodium HEPES pH 7.5,None,Structure
+F4,64,"1.0 M Sodium acetate trihydrate, 0.05 M Cadmium sulfate 8/3-hydrate",0.1 M Sodium HEPES pH 7.5,None,Structure
+F5,65,None,0.1 M Sodium HEPES pH 7.5,70 % v/v MPD,Structure
+F6,66,4.3 M Sodium chloride,0.1 M Sodium HEPES pH 7.5,None,Structure
+F7,67,None,0.1 M Sodium HEPES pH 7.5,"10 % w/v PEG 8000, 8 % v/v Ethylene glycol",Structure
+F8,68,1.6 M Magnesium sulfate heptahydrate,0.1 M MES pH 6.5,None,Structure
+F9,69,"2.0 M Sodium chloride, 0.1 M Potassium phosphate monobasic, 0.1 M Sodium phosphate monobasic monohydrate",0.1 M MES pH 6.5,None,Structure
+F10,70,None,0.1 M MES pH 6.5,12 % w/v PEG 20000,Structure
+F11,71,1.6 M Ammonium sulfate,0.1 M MES pH 6.5,"10 % v/v 1,4-Dioxane",Structure
+F12,72,0.05 M Cesium chloride,0.1 M MES pH 6.5,30 % v/v Jeffamine® M-600,Structure
+G1,73,"0.01 M Cobalt(II) chloride hexahydrate, 1.8 M Ammonium sulfate",0.1 M MES pH 6.5,None,Structure
+G2,74,0.2 M Ammonium sulfate,0.1 M MES pH 6.5,30 % w/v PEG 5000 MME,Structure
+G3,75,0.01 M Zinc sulfate heptahydrate,0.1 M MES pH 6.5,25 % v/v PEG 500 MME,Structure
+G4,76,None,0.1 M Sodium HEPES pH 7.5,20 % w/v PEG 10000,Structure
+G5,77,"2.0 M Ammonium sulfate, 0.2 M Potassium sodium tartrate tetrahydrate",0.1 M Sodium citrate pH 5.6,None,Structure
+G6,78,"1.0 M Lithium sulfate, 0.5 M Ammonium sulfate",0.1 M Sodium citrate pH 5.6,None,Structure
+G7,79,0.5 M Sodium chloride,0.1 M Sodium citrate pH 5.6,2 % v/v Polyethyleneimine,Structure
+G8,80,None,0.1 M Sodium citrate pH 5.6,35 % v/v tert-Butanol,Structure
+G9,81,0.01 M Iron(III) chloride hexahydrate,0.1 M Sodium citrate pH 5.6,10 % v/v Jeffamine® M-600,Structure
+G10,82,0.01 M Manganese(II) chloride tetrahydrate,0.1 M Sodium citrate pH 5.6,"2.5 M 1,6-Hexanediol",Structure
+G11,83,2.0 M Sodium chloride,0.1 M Sodium acetate pH 4.6,None,Structure
+G12,84,0.2 M Sodium chloride,0.1 M Sodium acetate pH 4.6,30 % v/v MPD,Structure
+H1,85,0.01 M Cobalt(II) chloride hexahydrate,0.1 M Sodium acetate pH 4.6,"1.0 M 1,6-Hexanediol",Structure
+H2,86,0.1 M Cadmium chloride hemi(pentahydrate),0.1 M Sodium acetate pH 4.6,30 % v/v PEG 400,Structure
+H3,87,0.2 M Ammonium sulfate,0.1 M Sodium acetate pH 4.6,30 % w/v PEG 2000 MME,Structure
+H4,88,2.0 M Sodium chloride,None,10 % w/v PEG 6000,Structure
+H5,89,"0.5 M Sodium chloride, 0.1 M Magnesium chloride hexahydrate, 0.01 M CTAB",None,None,Structure
+H6,90,None,None,25 % v/v Ethylene glycol,Structure
+H7,91,None,None,"35 % v/v 1,4-Dioxane",Structure
+H8,92,2.0 M Ammonium sulfate,None,5 % v/v 2-Propanol,Structure
+H9,93,None,1.0 M Imidazole pH 7.0,None,Structure
+H10,94,None,None,"10 % w/v PEG 1000, 10 % w/v PEG 8000",Structure
+H11,95,1.5 M Sodium chloride,None,10 % v/v Ethanol,Structure
+H12,96,None,1.6 M Sodium citrate pH 6.5,None,Structure
+A1,1,0.06 M Divalents,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+A2,2,0.06 M Divalents,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+A3,3,0.06 M Divalents,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+A4,4,0.06 M Divalents,0.1 M Buffer System 1 pH 6.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+A5,5,0.06 M Divalents,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+A6,6,0.06 M Divalents,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+A7,7,0.06 M Divalents,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+A8,8,0.06 M Divalents,0.1 M Buffer System 2 pH 7.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+A9,9,0.06 M Divalents,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+A10,10,0.06 M Divalents,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+A11,11,0.06 M Divalents,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+A12,12,0.06 M Divalents,0.1 M Buffer System 3 pH 8.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+B1,13,0.09 M Halogens,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+B2,14,0.09 M Halogens,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+B3,15,0.09 M Halogens,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+B4,16,0.09 M Halogens,0.1 M Buffer System 1 pH 6.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+B5,17,0.09 M Halogens,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+B6,18,0.09 M Halogens,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+B7,19,0.09 M Halogens,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+B8,20,0.09 M Halogens,0.1 M Buffer System 2 pH 7.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+B9,21,0.09 M Halogens,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+B10,22,0.09 M Halogens,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+B11,23,0.09 M Halogens,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+B12,24,0.09 M Halogens,0.1 M Buffer System 3 pH 8.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+C1,25,0.09 M NPS,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+C2,26,0.09 M NPS,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+C3,27,0.09 M NPS,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+C4,28,0.09 M NPS,0.1 M Buffer System 1 pH 6.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+C5,29,0.09 M NPS,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+C6,30,0.09 M NPS,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+C7,31,0.09 M NPS,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+C8,32,0.09 M NPS,0.1 M Buffer System 2 pH 7.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+C9,33,0.09 M NPS,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+C10,34,0.09 M NPS,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+C11,35,0.09 M NPS,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+C12,36,0.09 M NPS,0.1 M Buffer System 3 pH 8.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+D1,37,0.12 M Alcohols,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+D2,38,0.12 M Alcohols,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+D3,39,0.12 M Alcohols,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+D4,40,0.12 M Alcohols,0.1 M Buffer System 1 pH 6.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+D5,41,0.12 M Alcohols,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+D6,42,0.12 M Alcohols,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+D7,43,0.12 M Alcohols,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+D8,44,0.12 M Alcohols,0.1 M Buffer System 2 pH 7.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+D9,45,0.12 M Alcohols,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+D10,46,0.12 M Alcohols,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+D11,47,0.12 M Alcohols,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+D12,48,0.12 M Alcohols,0.1 M Buffer System 3 pH 8.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+E1,49,0.12 M Ethylene glycols,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+E2,50,0.12 M Ethylene glycols,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+E3,51,0.12 M Ethylene glycols,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+E4,52,0.12 M Ethylene glycols,0.1 M Buffer System 1 pH 6.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+E5,53,0.12 M Ethylene glycols,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+E6,54,0.12 M Ethylene glycols,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+E7,55,0.12 M Ethylene glycols,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+E8,56,0.12 M Ethylene glycols,0.1 M Buffer System 2 pH 7.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+E9,57,0.12 M Ethylene glycols,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+E10,58,0.12 M Ethylene glycols,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+E11,59,0.12 M Ethylene glycols,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+E12,60,0.12 M Ethylene glycols,0.1 M Buffer System 3 pH 8.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+F1,61,0.12 M Monosaccharides,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+F2,62,0.12 M Monosaccharides,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+F3,63,0.12 M Monosaccharides,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+F4,64,0.12 M Monosaccharides,0.1 M Buffer System 1 pH 6.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+F5,65,0.12 M Monosaccharides,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+F6,66,0.12 M Monosaccharides,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+F7,67,0.12 M Monosaccharides,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+F8,68,0.12 M Monosaccharides,0.1 M Buffer System 2 pH 7.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+F9,69,0.12 M Monosaccharides,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+F10,70,0.12 M Monosaccharides,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+F11,71,0.12 M Monosaccharides,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+F12,72,0.12 M Monosaccharides,0.1 M Buffer System 3 pH 8.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+G1,73,0.1 M Carboxylic acids,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+G2,74,0.1 M Carboxylic acids,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+G3,75,0.1 M Carboxylic acids,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+G4,76,0.1 M Carboxylic acids,0.1 M Buffer System 1 pH 6.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+G5,77,0.1 M Carboxylic acids,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+G6,78,0.1 M Carboxylic acids,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+G7,79,0.1 M Carboxylic acids,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+G8,80,0.1 M Carboxylic acids,0.1 M Buffer System 2 pH 7.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+G9,81,0.1 M Carboxylic acids,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+G10,82,0.1 M Carboxylic acids,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+G11,83,0.1 M Carboxylic acids,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+G12,84,0.1 M Carboxylic acids,0.1 M Buffer System 3 pH 8.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+H1,85,0.1 M Amino acids,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+H2,86,0.1 M Amino acids,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+H3,87,0.1 M Amino acids,0.1 M Buffer System 1 pH 6.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+H4,88,0.1 M Amino acids,0.1 M Buffer System 1 pH 6.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+H5,89,0.1 M Amino acids,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+H6,90,0.1 M Amino acids,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+H7,91,0.1 M Amino acids,0.1 M Buffer System 2 pH 7.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+H8,92,0.1 M Amino acids,0.1 M Buffer System 2 pH 7.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+H9,93,0.1 M Amino acids,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 1 (P500MME_P20K),Morpheus
+H10,94,0.1 M Amino acids,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 2 (EDO_P8K),Morpheus
+H11,95,0.1 M Amino acids,0.1 M Buffer System 3 pH 8.5,30 % v/v Precipitant Mix 3 (GOL_P4K),Morpheus
+H12,96,0.1 M Amino acids,0.1 M Buffer System 3 pH 8.5,37.5 % v/v Precipitant Mix 4 (MPD_P1K_P3350),Morpheus
+A1,1,0.2 M Lithium sulfate,0.1 M Sodium acetate pH 4.5,50 % w/v PEG 400,JCSG+
+A2,2,None,0.1 M Sodium citrate pH 5.5,20 % w/v PEG 3000,JCSG+
+A3,3,0.2 M Ammonium citrate dibasic,None,20 % w/v PEG 3350,JCSG+
+A4,4,0.02 M Calcium chloride dihydrate,0.1 M Sodium acetate pH 4.6,30 % v/v MPD,JCSG+
+A5,5,0.2 M Magnesium formate dihydrate,None,20 % w/v PEG 3350,JCSG+
+A6,6,0.2 M Lithium sulfate,0.1 M Phosphate/citrate pH 4.2,20 % w/v PEG 1000,JCSG+
+A7,7,None,0.1 M CHES pH 9.5,20 % w/v PEG 8000,JCSG+
+A8,8,0.2 M Ammonium formate,None,20 % w/v PEG 3350,JCSG+
+A9,9,0.2 M Ammonium chloride,None,20 % w/v PEG 3350,JCSG+
+A10,10,0.2 M Potassium formate,None,20 % w/v PEG 3350,JCSG+
+A11,11,0.2 M Ammonium phosphate monobasic,0.1 M Tris pH 8.5,50 % v/v MPD,JCSG+
+A12,12,0.2 M Potassium nitrate,None,20 % w/v PEG 3350,JCSG+
+B1,13,0.8 M Ammonium sulfate,0.1 M Citrate pH 4.0,None,JCSG+
+B2,14,0.2 M Sodium thiocyanate,None,20 % w/v PEG 3350,JCSG+
+B3,15,None,0.1 M BICINE pH 9.0,20 % w/v PEG 6000,JCSG+
+B4,16,None,0.1 M HEPES pH 7.5,10 % w/v PEG 8000 / 8 % v/v Ethylene glycol,JCSG+
+B5,17,None,0.1 M Sodium cacodylate pH 6.5,40 % v/v MPD / 5 % w/v PEG 8000,JCSG+
+B6,18,None,0.1 M Phosphate/citrate pH 4.2,40 % v/v Ethanol / 5 % w/v PEG 1000,JCSG+
+B7,19,None,0.1 M Sodium acetate pH 4.6,8 % w/v PEG 4000,JCSG+
+B8,20,0.2 M Magnesium chloride hexahydrate,0.1 M Tris pH 7.0,10 % w/v PEG 8000,JCSG+
+B9,21,None,0.1 M Citrate pH 5.0,20 % w/v PEG 6000,JCSG+
+B10,22,0.2 M Magnesium chloride hexahydrate,0.1 M Sodium cacodylate pH 6.5,50 % v/v PEG 200,JCSG+
+B11,23,1.6 M Sodium citrate tribasic dihydrate,None,None,JCSG+
+B12,24,0.2 M Potassium citrate tribasic monohydrate,None,20 % w/v PEG 3350,JCSG+
+C1,25,0.2 M Sodium chloride,0.1 M Phosphate/citrate pH 4.2,20 % w/v PEG 8000,JCSG+
+C2,26,1.0 M Lithium chloride,0.1 M Citrate pH 4.0,20 % w/v PEG 6000,JCSG+
+C3,27,0.2 M Ammonium nitrate,None,20 % w/v PEG 3350,JCSG+
+C4,28,None,0.1 M HEPES pH 7.0,10 % w/v PEG 6000,JCSG+
+C5,29,0.8 M Sodium phosphate monobasic / 0.8 M Potassium phosphate monobasic,0.1 M Sodium HEPES pH 7.5,None,JCSG+
+C6,30,None,0.1 M Phosphate/citrate pH 4.2,40 % v/v PEG 300,JCSG+
+C7,31,0.2 M Zinc acetate dihydrate,0.1 M Sodium acetate pH 4.5,10 % w/v PEG 3000,JCSG+
+C8,32,None,0.1 M Tris pH 8.5,20 % v/v Ethanol,JCSG+
+C9,33,None,0.1 M Sodium/potassium phosphate pH 6.2,"25 % v/v 1,2-Propanediol / 10 % v/v Glycerol",JCSG+
+C10,34,None,0.1 M BICINE pH 9.0,"10 % w/v PEG 20,000 / 2 % v/v 1,4-Dioxane",JCSG+
+C11,35,2.0 M Ammonium sulfate,0.1 M Sodium acetate pH 4.6,None,JCSG+
+C12,36,None,None,10 % w/v PEG 1000 / 10 % w/v PEG 8000,JCSG+
+D1,37,None,None,24 % w/v PEG 1500 / 20 % v/v Glycerol,JCSG+
+D2,38,0.2 M Magnesium chloride hexahydrate,0.1 M Sodium HEPES pH 7.5,30 % v/v PEG 400,JCSG+
+D3,39,0.2 M Sodium chloride,0.1 M Sodium/potassium phosphate pH 6.2,50 % v/v PEG 200,JCSG+
+D4,40,0.2 M Lithium sulfate,0.1 M Sodium acetate pH 4.5,30 % w/v PEG 8000,JCSG+
+D5,41,None,0.1 M HEPES pH 7.5,70 % v/v MPD,JCSG+
+D6,42,0.2 M Magnesium chloride hexahydrate,0.1 M Tris pH 8.5,20 % w/v PEG 8000,JCSG+
+D7,43,0.2 M Lithium sulfate,0.1 M Tris pH 8.5,40 % v/v PEG 400,JCSG+
+D8,44,None,0.1 M Tris pH 8.0,40 % v/v MPD,JCSG+
+D9,45,0.17 M Ammonium sulfate,None,25.5 % w/v PEG 4000 / 15 % v/v Glycerol,JCSG+
+D10,46,0.2 M Calcium acetate hydrate,0.1 M Sodium cacodylate pH 6.5,40 % v/v PEG 300,JCSG+
+D11,47,0.14 M Calcium chloride dihydrate,0.07 M Sodium acetate pH 4.6,14 % v/v 2-Propanol / 30 % v/v Glycerol,JCSG+
+D12,48,0.04 M Potassium phosphate monobasic,None,16 % w/v PEG 8000 / 20 % v/v Glycerol,JCSG+
+E1,49,1.0 M Sodium citrate tribasic dihydrate,0.1 M Sodium cacodylate pH 6.5,None,JCSG+
+E2,50,2.0 M Ammonium sulfate / 0.2 M Sodium chloride,0.1 M Sodium cacodylate pH 6.5,None,JCSG+
+E3,51,0.2 M Sodium chloride,0.1 M HEPES pH 7.5,10 % v/v 2-Propanol,JCSG+
+E4,52,1.26 M Ammonium sulfate / 0.2 M Lithium sulfate,0.1 M Tris pH 8.5,None,JCSG+
+E5,53,None,0.1 M CAPS pH 10.5,40 % v/v MPD,JCSG+
+E6,54,0.2 M Zinc acetate dihydrate,0.1 M Imidazole pH 8.0,20 % w/v PEG 3000,JCSG+
+E7,55,0.2 M Zinc acetate dihydrate,0.1 M Sodium cacodylate pH 6.5,10 % v/v 2-Propanol,JCSG+
+E8,56,1.0 M Ammonium phosphate dibasic,0.1 M Sodium acetate pH 4.5,None,JCSG+
+E9,57,1.6 M Magnesium sulfate heptahydrate,0.1 M MES pH 6.5,None,JCSG+
+E10,58,None,0.1 M BICINE pH 9.0,10 % w/v PEG 6000,JCSG+
+E11,59,0.16 M Calcium acetate hydrate,0.08 M Sodium cacodylate pH 6.5,14.4 % w/v PEG 8000 / 20 % v/v Glycerol,JCSG+
+E12,60,None,0.1 M Imidazole pH 8.0,10 % w/v PEG 8000,JCSG+
+F1,61,0.05 M Cesium chloride,0.1 M MES pH 6.5,30 % v/v Jeffamine® M-600,JCSG+
+F2,62,3.2 M Ammonium sulfate,0.1 M Citrate pH 5.0,None,JCSG+
+F3,63,None,0.1 M Tris pH 8.0,20 % v/v MPD,JCSG+
+F4,64,None,0.1 M HEPES pH 7.5,20 % v/v Jeffamine® M-600,JCSG+
+F5,65,0.2 M Magnesium chloride hexahydrate,0.1 M Tris pH 8.5,50 % v/v Ethylene glycol,JCSG+
+F6,66,None,0.1 M BICINE pH 9.0,10 % v/v MPD,JCSG+
+F7,67,0.8 M Succinic acid pH 7.0,None,None,JCSG+
+F8,68,2.1 M DL-Malic acid pH 7.0,None,None,JCSG+
+F9,69,2.4 M Sodium malonate dibasic monohydrate pH 7.0,None,None,JCSG+
+F10,70,1.1 M Sodium malonate dibasic monohydrate,0.1 M HEPES pH 7.0,0.5 % v/v Jeffamine® ED-2003,JCSG+
+F11,71,1.0 M Succinic acid,0.1 M HEPES pH 7.0,1 % w/v PEG 2000 MME,JCSG+
+F12,72,None,0.1 M HEPES pH 7.0,30 % v/v Jeffamine® M-600,JCSG+
+G1,73,None,0.1 M HEPES pH 7.0,30 % v/v Jeffamine® ED-2003,JCSG+
+G2,74,0.02 M Magnesium chloride hexahydrate,0.1 M HEPES pH 7.5,22 % w/v Poly(acrylic acid sodium salt) 5100,JCSG+
+G3,75,0.01 M Cobalt(II) chloride hexahydrate,0.1 M Tris pH 8.5,20 % w/v Polyvinylpyrrolidone,JCSG+
+G4,76,0.2 M TMAO,0.1 M Tris pH 8.5,20 % w/v PEG 2000 MME,JCSG+
+G5,77,0.005 M Cobalt(II) / Cadmium / Magnesium / Nickel Chlorides,0.1 M HEPES pH 7.5,12 % w/v PEG 3350,JCSG+
+G6,78,0.2 M Sodium malonate dibasic monohydrate,None,20 % w/v PEG 3350,JCSG+
+G7,79,0.1 M Succinic acid,None,15 % w/v PEG 3350,JCSG+
+G8,80,0.15 M DL-Malic acid,None,20 % w/v PEG 3350,JCSG+
+G9,81,0.1 M Potassium thiocyanate,None,30 % w/v PEG 2000 MME,JCSG+
+G10,82,0.15 M Potassium bromide,None,30 % w/v PEG 2000 MME,JCSG+
+G11,83,2.0 M Ammonium sulfate,0.1 M BIS-Tris pH 5.5,None,JCSG+
+G12,84,3.0 M Sodium chloride,0.1 M BIS-Tris pH 5.5,None,JCSG+
+H1,85,0.3 M Magnesium formate dihydrate,0.1 M BIS-Tris pH 5.5,None,JCSG+
+H2,86,1.0 M Ammonium sulfate,0.1 M BIS-Tris pH 5.5,1 % w/v PEG 3350,JCSG+
+H3,87,None,0.1 M BIS-Tris pH 5.5,25 % w/v PEG 3350,JCSG+
+H4,88,0.2 M Calcium chloride dihydrate,0.1 M BIS-Tris pH 5.5,45 % v/v MPD,JCSG+
+H5,89,0.2 M Ammonium acetate,0.1 M BIS-Tris pH 5.5,45 % v/v MPD,JCSG+
+H6,90,0.1 M Ammonium acetate,0.1 M BIS-Tris pH 5.5,"17 % w/v PEG 10,000",JCSG+
+H7,91,0.2 M Ammonium sulfate,0.1 M BIS-Tris pH 5.5,25 % w/v PEG 3350,JCSG+
+H8,92,0.2 M Sodium chloride,0.1 M BIS-Tris pH 5.5,25 % w/v PEG 3350,JCSG+
+H9,93,0.2 M Lithium sulfate,0.1 M BIS-Tris pH 5.5,25 % w/v PEG 3350,JCSG+
+H10,94,0.2 M Ammonium acetate,0.1 M BIS-Tris pH 5.5,25 % w/v PEG 3350,JCSG+
+H11,95,0.2 M Magnesium chloride hexahydrate,0.1 M BIS-Tris pH 5.5,25 % w/v PEG 3350,JCSG+
+H12,96,0.2 M Ammonium acetate,0.1 M HEPES pH 7.5,45 % v/v MPD,JCSG+
+A1,1,0.2 M Lithium sulfate,0.1 M Sodium acetate pH 4.5,50 % w/v PEG 400,INDEX
+A2,2,None,0.1 M Sodium citrate pH 5.5,20 % w/v PEG 3000,INDEX
+A3,3,0.2 M Ammonium citrate dibasic,None,20 % w/v PEG 3350,INDEX
+A4,4,0.02 M Calcium chloride dihydrate,0.1 M Sodium acetate pH 4.6,30 % v/v MPD,INDEX
+A5,5,0.2 M Magnesium formate dihydrate,None,20 % w/v PEG 3350,INDEX
+A6,6,0.2 M Lithium sulfate,0.1 M Phosphate/citrate pH 4.2,20 % w/v PEG 1000,INDEX
+A7,7,None,0.1 M CHES pH 9.5,20 % w/v PEG 8000,INDEX
+A8,8,0.2 M Ammonium formate,None,20 % w/v PEG 3350,INDEX
+A9,9,0.2 M Ammonium chloride,None,20 % w/v PEG 3350,INDEX
+A10,10,0.2 M Potassium formate,None,20 % w/v PEG 3350,INDEX
+A11,11,0.2 M Ammonium phosphate monobasic,0.1 M Tris pH 8.5,50 % v/v MPD,INDEX
+A12,12,0.2 M Potassium nitrate,None,20 % w/v PEG 3350,INDEX
+B1,13,0.8 M Ammonium sulfate,0.1 M Citrate pH 4.0,None,INDEX
+B2,14,0.2 M Sodium thiocyanate,None,20 % w/v PEG 3350,INDEX
+B3,15,None,0.1 M BICINE pH 9.0,20 % w/v PEG 6000,INDEX
+B4,16,None,0.1 M HEPES pH 7.5,10 % w/v PEG 8000 / 8 % v/v Ethylene glycol,INDEX
+B5,17,None,0.1 M Sodium cacodylate pH 6.5,40 % v/v MPD / 5 % w/v PEG 8000,INDEX
+B6,18,None,0.1 M Phosphate/citrate pH 4.2,40 % v/v Ethanol / 5 % w/v PEG 1000,INDEX
+B7,19,None,0.1 M Sodium acetate pH 4.6,8 % w/v PEG 4000,INDEX
+B8,20,0.2 M Magnesium chloride hexahydrate,0.1 M Tris pH 7.0,10 % w/v PEG 8000,INDEX
+B9,21,None,0.1 M Citrate pH 5.0,20 % w/v PEG 6000,INDEX
+B10,22,0.2 M Magnesium chloride hexahydrate,0.1 M Sodium cacodylate pH 6.5,50 % v/v PEG 200,INDEX
+B11,23,1.6 M Sodium citrate tribasic dihydrate,None,None,INDEX
+B12,24,0.2 M Potassium citrate tribasic monohydrate,None,20 % w/v PEG 3350,INDEX
+C1,25,0.2 M Sodium chloride,0.1 M Phosphate/citrate pH 4.2,20 % w/v PEG 8000,INDEX
+C2,26,1.0 M Lithium chloride,0.1 M Citrate pH 4.0,20 % w/v PEG 6000,INDEX
+C3,27,0.2 M Ammonium nitrate,None,20 % w/v PEG 3350,INDEX
+C4,28,None,0.1 M HEPES pH 7.0,10 % w/v PEG 6000,INDEX
+C5,29,0.8 M Sodium phosphate monobasic / 0.8 M Potassium phosphate monobasic,0.1 M Sodium HEPES pH 7.5,None,INDEX
+C6,30,None,0.1 M Phosphate/citrate pH 4.2,40 % v/v PEG 300,INDEX
+C7,31,0.2 M Zinc acetate dihydrate,0.1 M Sodium acetate pH 4.5,10 % w/v PEG 3000,INDEX
+C8,32,None,0.1 M Tris pH 8.5,20 % v/v Ethanol,INDEX
+C9,33,None,0.1 M Sodium/potassium phosphate pH 6.2,"25 % v/v 1,2-Propanediol / 10 % v/v Glycerol",INDEX
+C10,34,None,0.1 M BICINE pH 9.0,"10 % w/v PEG 20,000 / 2 % v/v 1,4-Dioxane",INDEX
+C11,35,2.0 M Ammonium sulfate,0.1 M Sodium acetate pH 4.6,None,INDEX
+C12,36,None,None,10 % w/v PEG 1000 / 10 % w/v PEG 8000,INDEX
+D1,37,None,None,24 % w/v PEG 1500 / 20 % v/v Glycerol,INDEX
+D2,38,0.2 M Magnesium chloride hexahydrate,0.1 M Sodium HEPES pH 7.5,30 % v/v PEG 400,INDEX
+D3,39,0.2 M Sodium chloride,0.1 M Sodium/potassium phosphate pH 6.2,50 % v/v PEG 200,INDEX
+D4,40,0.2 M Lithium sulfate,0.1 M Sodium acetate pH 4.5,30 % w/v PEG 8000,INDEX
+D5,41,None,0.1 M HEPES pH 7.5,70 % v/v MPD,INDEX
+D6,42,0.2 M Magnesium chloride hexahydrate,0.1 M Tris pH 8.5,20 % w/v PEG 8000,INDEX
+D7,43,0.2 M Lithium sulfate,0.1 M Tris pH 8.5,40 % v/v PEG 400,INDEX
+D8,44,None,0.1 M Tris pH 8.0,40 % v/v MPD,INDEX
+D9,45,0.17 M Ammonium sulfate,None,25.5 % w/v PEG 4000 / 15 % v/v Glycerol,INDEX
+D10,46,0.2 M Calcium acetate hydrate,0.1 M Sodium cacodylate pH 6.5,40 % v/v PEG 300,INDEX
+D11,47,0.14 M Calcium chloride dihydrate,0.07 M Sodium acetate pH 4.6,14 % v/v 2-Propanol / 30 % v/v Glycerol,INDEX
+D12,48,0.04 M Potassium phosphate monobasic,None,16 % w/v PEG 8000 / 20 % v/v Glycerol,INDEX
+E1,49,1.0 M Sodium citrate tribasic dihydrate,0.1 M Sodium cacodylate pH 6.5,None,INDEX
+E2,50,2.0 M Ammonium sulfate / 0.2 M Sodium chloride,0.1 M Sodium cacodylate pH 6.5,None,INDEX
+E3,51,0.2 M Sodium chloride,0.1 M HEPES pH 7.5,10 % v/v 2-Propanol,INDEX
+E4,52,1.26 M Ammonium sulfate / 0.2 M Lithium sulfate,0.1 M Tris pH 8.5,None,INDEX
+E5,53,None,0.1 M CAPS pH 10.5,40 % v/v MPD,INDEX
+E6,54,0.2 M Zinc acetate dihydrate,0.1 M Imidazole pH 8.0,20 % w/v PEG 3000,INDEX
+E7,55,0.2 M Zinc acetate dihydrate,0.1 M Sodium cacodylate pH 6.5,10 % v/v 2-Propanol,INDEX
+E8,56,1.0 M Ammonium phosphate dibasic,0.1 M Sodium acetate pH 4.5,None,INDEX
+E9,57,1.6 M Magnesium sulfate heptahydrate,0.1 M MES pH 6.5,None,INDEX
+E10,58,None,0.1 M BICINE pH 9.0,10 % w/v PEG 6000,INDEX
+E11,59,0.16 M Calcium acetate hydrate,0.08 M Sodium cacodylate pH 6.5,14.4 % w/v PEG 8000 / 20 % v/v Glycerol,INDEX
+E12,60,None,0.1 M Imidazole pH 8.0,10 % w/v PEG 8000,INDEX
+F1,61,0.05 M Cesium chloride,0.1 M MES pH 6.5,30 % v/v Jeffamine® M-600,INDEX
+F2,62,3.2 M Ammonium sulfate,0.1 M Citrate pH 5.0,None,INDEX
+F3,63,None,0.1 M Tris pH 8.0,20 % v/v MPD,INDEX
+F4,64,None,0.1 M HEPES pH 7.5,20 % v/v Jeffamine® M-600,INDEX
+F5,65,0.2 M Magnesium chloride hexahydrate,0.1 M Tris pH 8.5,50 % v/v Ethylene glycol,INDEX
+F6,66,None,0.1 M BICINE pH 9.0,10 % v/v MPD,INDEX
+F7,67,0.8 M Succinic acid pH 7.0,None,None,INDEX
+F8,68,2.1 M DL-Malic acid pH 7.0,None,None,INDEX
+F9,69,2.4 M Sodium malonate dibasic monohydrate pH 7.0,None,None,INDEX
+F10,70,1.1 M Sodium malonate dibasic monohydrate,0.1 M HEPES pH 7.0,0.5 % v/v Jeffamine® ED-2003,INDEX
+F11,71,1.0 M Succinic acid,0.1 M HEPES pH 7.0,1 % w/v PEG 2000 MME,INDEX
+F12,72,None,0.1 M HEPES pH 7.0,30 % v/v Jeffamine® M-600,INDEX
+G1,73,None,0.1 M HEPES pH 7.0,30 % v/v Jeffamine® ED-2003,INDEX
+G2,74,0.02 M Magnesium chloride hexahydrate,0.1 M HEPES pH 7.5,22 % w/v Poly(acrylic acid sodium salt) 5100,INDEX
+G3,75,0.01 M Cobalt(II) chloride hexahydrate,0.1 M Tris pH 8.5,20 % w/v Polyvinylpyrrolidone,INDEX
+G4,76,0.2 M TMAO,0.1 M Tris pH 8.5,20 % w/v PEG 2000 MME,INDEX
+G5,77,0.005 M Cobalt / Cadmium / Magnesium / Nickel Chlorides,0.1 M HEPES pH 7.5,12 % w/v PEG 3350,INDEX
+G6,78,0.2 M Sodium malonate dibasic monohydrate,None,20 % w/v PEG 3350,INDEX
+G7,79,0.1 M Succinic acid,None,15 % w/v PEG 3350,INDEX
+G8,80,0.15 M DL-Malic acid,None,20 % w/v PEG 3350,INDEX
+G9,81,0.1 M Potassium thiocyanate,None,30 % w/v PEG 2000 MME,INDEX
+G10,82,0.15 M Potassium bromide,None,30 % w/v PEG 2000 MME,INDEX
+G11,83,2.0 M Ammonium sulfate,0.1 M BIS-Tris pH 5.5,None,INDEX
+G12,84,3.0 M Sodium chloride,0.1 M BIS-Tris pH 5.5,None,INDEX
+H1,85,0.3 M Magnesium formate dihydrate,0.1 M BIS-Tris pH 5.5,None,INDEX
+H2,86,1.0 M Ammonium sulfate,0.1 M BIS-Tris pH 5.5,1 % w/v PEG 3350,INDEX
+H3,87,None,0.1 M BIS-Tris pH 5.5,25 % w/v PEG 3350,INDEX
+H4,88,0.2 M Calcium chloride dihydrate,0.1 M BIS-Tris pH 5.5,45 % v/v MPD,INDEX
+H5,89,0.2 M Ammonium acetate,0.1 M BIS-Tris pH 5.5,45 % v/v MPD,INDEX
+H6,90,0.1 M Ammonium acetate,0.1 M BIS-Tris pH 5.5,"17 % w/v PEG 10,000",INDEX
+H7,91,0.2 M Ammonium sulfate,0.1 M BIS-Tris pH 5.5,25 % w/v PEG 3350,INDEX
+H8,92,0.2 M Sodium chloride,0.1 M BIS-Tris pH 5.5,25 % w/v PEG 3350,INDEX
+H9,93,0.2 M Lithium sulfate,0.1 M BIS-Tris pH 5.5,25 % w/v PEG 3350,INDEX
+H10,94,0.2 M Ammonium acetate,0.1 M BIS-Tris pH 5.5,25 % w/v PEG 3350,INDEX
+H11,95,0.2 M Magnesium chloride hexahydrate,0.1 M BIS-Tris pH 5.5,25 % w/v PEG 3350,INDEX
+H12,96,0.2 M Ammonium acetate,0.1 M HEPES pH 7.5,45 % v/v MPD,INDEX
+A1,1,None,0.1 M SPG pH 4.0,25 % w/v PEG 1500,PACT premier
+A2,2,None,0.1 M SPG pH 5.0,25 % w/v PEG 1500,PACT premier
+A3,3,None,0.1 M SPG pH 6.0,25 % w/v PEG 1500,PACT premier
+A4,4,None,0.1 M SPG pH 7.0,25 % w/v PEG 1500,PACT premier
+A5,5,None,0.1 M SPG pH 8.0,25 % w/v PEG 1500,PACT premier
+A6,6,None,0.1 M SPG pH 9.0,25 % w/v PEG 1500,PACT premier
+A7,7,0.2 M Sodium chloride,0.1 M Sodium acetate pH 5.0,20 % w/v PEG 6000,PACT premier
+A8,8,0.2 M Ammonium chloride,0.1 M Sodium acetate pH 5.0,20 % w/v PEG 6000,PACT premier
+A9,9,0.2 M Lithium chloride,0.1 M Sodium acetate pH 5.0,20 % w/v PEG 6000,PACT premier
+A10,10,0.2 M Magnesium chloride hexahydrate,0.1 M Sodium acetate pH 5.0,20 % w/v PEG 6000,PACT premier
+A11,11,0.2 M Calcium chloride dihydrate,0.1 M Sodium acetate pH 5.0,20 % w/v PEG 6000,PACT premier
+A12,12,0.01 M Zinc chloride,0.1 M Sodium acetate pH 5.0,20 % w/v PEG 6000,PACT premier
+B1,13,None,0.1 M MIB pH 4.0,25 % w/v PEG 1500,PACT premier
+B2,14,None,0.1 M MIB pH 5.0,25 % w/v PEG 1500,PACT premier
+B3,15,None,0.1 M MIB pH 6.0,25 % w/v PEG 1500,PACT premier
+B4,16,None,0.1 M MIB pH 7.0,25 % w/v PEG 1500,PACT premier
+B5,17,None,0.1 M MIB pH 8.0,25 % w/v PEG 1500,PACT premier
+B6,18,None,0.1 M MIB pH 9.0,25 % w/v PEG 1500,PACT premier
+B7,19,0.2 M Sodium chloride,0.1 M MES pH 6.0,20 % w/v PEG 6000,PACT premier
+B8,20,0.2 M Ammonium chloride,0.1 M MES pH 6.0,20 % w/v PEG 6000,PACT premier
+B9,21,0.2 M Lithium chloride,0.1 M MES pH 6.0,20 % w/v PEG 6000,PACT premier
+B10,22,0.2 M Magnesium chloride hexahydrate,0.1 M MES pH 6.0,20 % w/v PEG 6000,PACT premier
+B11,23,0.2 M Calcium chloride dihydrate,0.1 M MES pH 6.0,20 % w/v PEG 6000,PACT premier
+B12,24,0.01 M Zinc chloride,0.1 M MES pH 6.0,20 % w/v PEG 6000,PACT premier
+C1,25,None,0.1 M PCTP pH 4.0,25 % w/v PEG 1500,PACT premier
+C2,26,None,0.1 M PCTP pH 5.0,25 % w/v PEG 1500,PACT premier
+C3,27,None,0.1 M PCTP pH 6.0,25 % w/v PEG 1500,PACT premier
+C4,28,None,0.1 M PCTP pH 7.0,25 % w/v PEG 1500,PACT premier
+C5,29,None,0.1 M PCTP pH 8.0,25 % w/v PEG 1500,PACT premier
+C6,30,None,0.1 M PCTP pH 9.0,25 % w/v PEG 1500,PACT premier
+C7,31,0.2 M Sodium chloride,0.1 M HEPES pH 7.0,20 % w/v PEG 6000,PACT premier
+C8,32,0.2 M Ammonium chloride,0.1 M HEPES pH 7.0,20 % w/v PEG 6000,PACT premier
+C9,33,0.2 M Lithium chloride,0.1 M HEPES pH 7.0,20 % w/v PEG 6000,PACT premier
+C10,34,0.2 M Magnesium chloride hexahydrate,0.1 M HEPES pH 7.0,20 % w/v PEG 6000,PACT premier
+C11,35,0.2 M Calcium chloride dihydrate,0.1 M HEPES pH 7.0,20 % w/v PEG 6000,PACT premier
+C12,36,0.01 M Zinc chloride,0.1 M HEPES pH 7.0,20 % w/v PEG 6000,PACT premier
+D1,37,None,0.1 M MMT pH 4.0,25 % w/v PEG 1500,PACT premier
+D2,38,None,0.1 M MMT pH 5.0,25 % w/v PEG 1500,PACT premier
+D3,39,None,0.1 M MMT pH 6.0,25 % w/v PEG 1500,PACT premier
+D4,40,None,0.1 M MMT pH 7.0,25 % w/v PEG 1500,PACT premier
+D5,41,None,0.1 M MMT pH 8.0,25 % w/v PEG 1500,PACT premier
+D6,42,None,0.1 M MMT pH 9.0,25 % w/v PEG 1500,PACT premier
+D7,43,0.2 M Sodium chloride,0.1 M Tris pH 8.0,20 % w/v PEG 6000,PACT premier
+D8,44,0.2 M Ammonium chloride,0.1 M Tris pH 8.0,20 % w/v PEG 6000,PACT premier
+D9,45,0.2 M Lithium chloride,0.1 M Tris pH 8.0,20 % w/v PEG 6000,PACT premier
+D10,46,0.2 M Magnesium chloride hexahydrate,0.1 M Tris pH 8.0,20 % w/v PEG 6000,PACT premier
+D11,47,0.2 M Calcium chloride dihydrate,0.1 M Tris pH 8.0,20 % w/v PEG 6000,PACT premier
+D12,48,0.002 M Zinc chloride,0.1 M Tris pH 8.0,20 % w/v PEG 6000,PACT premier
+E1,49,0.2 M Sodium fluoride,None,20 % w/v PEG 3350,PACT premier
+E2,50,0.2 M Sodium bromide,None,20 % w/v PEG 3350,PACT premier
+E3,51,0.2 M Sodium iodide,None,20 % w/v PEG 3350,PACT premier
+E4,52,0.2 M Potassium thiocyanate,None,20 % w/v PEG 3350,PACT premier
+E5,53,0.2 M Sodium nitrate,None,20 % w/v PEG 3350,PACT premier
+E6,54,0.2 M Sodium formate,None,20 % w/v PEG 3350,PACT premier
+E7,55,0.2 M Sodium acetate trihydrate,None,20 % w/v PEG 3350,PACT premier
+E8,56,0.2 M Sodium sulfate,None,20 % w/v PEG 3350,PACT premier
+E9,57,0.2 M Potassium sodium tartrate tetrahydrate,None,20 % w/v PEG 3350,PACT premier
+E10,58,0.02 M Sodium/potassium phosphate,None,20 % w/v PEG 3350,PACT premier
+E11,59,0.2 M Sodium citrate tribasic dihydrate,None,20 % w/v PEG 3350,PACT premier
+E12,60,0.2 M Sodium malonate dibasic monohydrate,None,20 % w/v PEG 3350,PACT premier
+F1,61,0.2 M Sodium fluoride,0.1 M Bis-Tris propane pH 6.5,20 % w/v PEG 3350,PACT premier
+F2,62,0.2 M Sodium bromide,0.1 M Bis-Tris propane pH 6.5,20 % w/v PEG 3350,PACT premier
+F3,63,0.2 M Sodium iodide,0.1 M Bis-Tris propane pH 6.5,20 % w/v PEG 3350,PACT premier
+F4,64,0.2 M Potassium thiocyanate,0.1 M Bis-Tris propane pH 6.5,20 % w/v PEG 3350,PACT premier
+F5,65,0.2 M Sodium nitrate,0.1 M Bis-Tris propane pH 6.5,20 % w/v PEG 3350,PACT premier
+F6,66,0.2 M Sodium formate,0.1 M Bis-Tris propane pH 6.5,20 % w/v PEG 3350,PACT premier
+F7,67,0.2 M Sodium acetate trihydrate,0.1 M Bis-Tris propane pH 6.5,20 % w/v PEG 3350,PACT premier
+F8,68,0.2 M Sodium sulfate,0.1 M Bis-Tris propane pH 6.5,20 % w/v PEG 3350,PACT premier
+F9,69,0.2 M Potassium sodium tartrate tetrahydrate,0.1 M Bis-Tris propane pH 6.5,20 % w/v PEG 3350,PACT premier
+F10,70,0.02 M Sodium/potassium phosphate,0.1 M Bis-Tris propane pH 6.5,20 % w/v PEG 3350,PACT premier
+F11,71,0.2 M Sodium citrate tribasic dihydrate,0.1 M Bis-Tris propane pH 6.5,20 % w/v PEG 3350,PACT premier
+F12,72,0.2 M Sodium malonate dibasic monohydrate,0.1 M Bis-Tris propane pH 6.5,20 % w/v PEG 3350,PACT premier
+G1,73,0.2 M Sodium fluoride,0.1 M Bis-Tris propane pH 7.5,20 % w/v PEG 3350,PACT premier
+G2,74,0.2 M Sodium bromide,0.1 M Bis-Tris propane pH 7.5,20 % w/v PEG 3350,PACT premier
+G3,75,0.2 M Sodium iodide,0.1 M Bis-Tris propane pH 7.5,20 % w/v PEG 3350,PACT premier
+G4,76,0.2 M Potassium thiocyanate,0.1 M Bis-Tris propane pH 7.5,20 % w/v PEG 3350,PACT premier
+G5,77,0.2 M Sodium nitrate,0.1 M Bis-Tris propane pH 7.5,20 % w/v PEG 3350,PACT premier
+G6,78,0.2 M Sodium formate,0.1 M Bis-Tris propane pH 7.5,20 % w/v PEG 3350,PACT premier
+G7,79,0.2 M Sodium acetate trihydrate,0.1 M Bis-Tris propane pH 7.5,20 % w/v PEG 3350,PACT premier
+G8,80,0.2 M Sodium sulfate,0.1 M Bis-Tris propane pH 7.5,20 % w/v PEG 3350,PACT premier
+G9,81,0.2 M Potassium sodium tartrate tetrahydrate,0.1 M Bis-Tris propane pH 7.5,20 % w/v PEG 3350,PACT premier
+G10,82,0.02 M Sodium/potassium phosphate,0.1 M Bis-Tris propane pH 7.5,20 % w/v PEG 3350,PACT premier
+G11,83,0.2 M Sodium citrate tribasic dihydrate,0.1 M Bis-Tris propane pH 7.5,20 % w/v PEG 3350,PACT premier
+G12,84,0.2 M Sodium malonate dibasic monohydrate,0.1 M Bis-Tris propane pH 7.5,20 % w/v PEG 3350,PACT premier
+H1,85,0.2 M Sodium fluoride,0.1 M Bis-Tris propane pH 8.5,20 % w/v PEG 3350,PACT premier
+H2,86,0.2 M Sodium bromide,0.1 M Bis-Tris propane pH 8.5,20 % w/v PEG 3350,PACT premier
+H3,87,0.2 M Sodium iodide,0.1 M Bis-Tris propane pH 8.5,20 % w/v PEG 3350,PACT premier
+H4,88,0.2 M Potassium thiocyanate,0.1 M Bis-Tris propane pH 8.5,20 % w/v PEG 3350,PACT premier
+H5,89,0.2 M Sodium nitrate,0.1 M Bis-Tris propane pH 8.5,20 % w/v PEG 3350,PACT premier
+H6,90,0.2 M Sodium formate,0.1 M Bis-Tris propane pH 8.5,20 % w/v PEG 3350,PACT premier
+H7,91,0.2 M Sodium acetate trihydrate,0.1 M Bis-Tris propane pH 8.5,20 % w/v PEG 3350,PACT premier
+H8,92,0.2 M Sodium sulfate,0.1 M Bis-Tris propane pH 8.5,20 % w/v PEG 3350,PACT premier
+H9,93,0.2 M Potassium sodium tartrate tetrahydrate,0.1 M Bis-Tris propane pH 8.5,20 % w/v PEG 3350,PACT premier
+H10,94,0.02 M Sodium/potassium phosphate,0.1 M Bis-Tris propane pH 8.5,20 % w/v PEG 3350,PACT premier
+H11,95,0.2 M Sodium citrate tribasic dihydrate,0.1 M Bis-Tris propane pH 8.5,20 % w/v PEG 3350,PACT premier
+H12,96,0.2 M Sodium malonate dibasic monohydrate,0.1 M Bis-Tris propane pH 8.5,20 % w/v PEG 3350,PACT premier

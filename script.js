@@ -1,250 +1,145 @@
 class ConditionCheckerApp {
     constructor() {
         this.selectedWells = [];
-        this.currentScreen = 'index';
-        this.screens = this.initializeScreens();
+        this.currentScreen = '';
+        this.screens = {};
         this.init();
     }
 
-    init() {
+    async init() {
+        await this.loadCSVData();
+        this.populateScreenDropdown();
         this.createPlateGrid();
         this.setupEventListeners();
         this.updateDisplay();
     }
 
-    initializeScreens() {
-        return {
-            index: {
-                name: 'INDEX (HR2-144)',
-                description: 'Hampton Research Index Screen',
-                conditions: this.getIndexConditions()
-            },
-            jcsg: {
-                name: 'JCSG+ (HR2-145)',
-                description: 'Joint Center for Structural Genomics Plus Screen',
-                conditions: this.getJCSGConditions()
+    async loadCSVData() {
+        try {
+            const response = await fetch('Scree_condition_table.csv');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
-            // Additional screens can be added here in the future
-        };
+            const text = await response.text();
+            this.parseCSV(text);
+            console.log('CSV loaded successfully. Screens found:', Object.keys(this.screens));
+        } catch (error) {
+            console.error('Failed to load CSV data:', error);
+            // Display error in UI
+            const select = document.getElementById('screenSelect');
+            const option = document.createElement('option');
+            option.textContent = 'Error loading data - use local server';
+            option.disabled = true;
+            select.appendChild(option);
+            
+            const conditionText = document.getElementById('conditionText');
+            conditionText.innerHTML = '<strong style="color: red;">Error: Cannot load CSV file.</strong><br><br>' +
+                'Please run a local web server instead of opening the HTML file directly.<br><br>' +
+                'See console for details: ' + error.message;
+        }
     }
 
-    getIndexConditions() {
-        // HR2-144 Reagent Formulations - mapping tube numbers (1-96) to conditions
-        return {
-            1: { salt: "None", buffer: "0.1 M Citric acid pH 3.5", precipitant: "2.0 M Ammonium sulfate" },
-            2: { salt: "None", buffer: "0.1 M Sodium acetate trihydrate pH 4.5", precipitant: "2.0 M Ammonium sulfate" },
-            3: { salt: "None", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "2.0 M Ammonium sulfate" },
-            4: { salt: "None", buffer: "0.1 M BIS-TRIS pH 6.5", precipitant: "2.0 M Ammonium sulfate" },
-            5: { salt: "None", buffer: "0.1 M HEPES pH 7.5", precipitant: "2.0 M Ammonium sulfate" },
-            6: { salt: "None", buffer: "0.1 M Tris pH 8.5", precipitant: "2.0 M Ammonium sulfate" },
-            7: { salt: "None", buffer: "0.1 M Citric acid pH 3.5", precipitant: "3.0 M Sodium chloride" },
-            8: { salt: "None", buffer: "0.1 M Sodium acetate trihydrate pH 4.5", precipitant: "3.0 M Sodium chloride" },
-            9: { salt: "None", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "3.0 M Sodium chloride" },
-            10: { salt: "None", buffer: "0.1 M BIS-TRIS pH 6.5", precipitant: "3.0 M Sodium chloride" },
-            11: { salt: "None", buffer: "0.1 M HEPES pH 7.5", precipitant: "3.0 M Sodium chloride" },
-            12: { salt: "None", buffer: "0.1 M Tris pH 8.5", precipitant: "3.0 M Sodium chloride" },
-            13: { salt: "None", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "0.3 M Magnesium formate dihydrate" },
-            14: { salt: "None", buffer: "0.1 M BIS-TRIS pH 6.5", precipitant: "0.5 M Magnesium formate dihydrate" },
-            15: { salt: "None", buffer: "0.1 M HEPES pH 7.5", precipitant: "0.5 M Magnesium formate dihydrate" },
-            16: { salt: "None", buffer: "0.1 M Tris pH 8.5", precipitant: "0.3 M Magnesium formate dihydrate" },
-            17: { salt: "None", buffer: "None - pH 5.6", precipitant: "1.26 M Sodium phosphate monobasic monohydrate" },
-            18: { salt: "None", buffer: "None - pH 6.9", precipitant: "0.14 M Potassium phosphate dibasic" },
-            19: { salt: "None", buffer: "None - pH 8.2", precipitant: "0.49 M Sodium phosphate monobasic monohydrate" },
-            20: { salt: "None", buffer: "None", precipitant: "0.91 M Potassium phosphate dibasic" },
-            21: { salt: "None", buffer: "None", precipitant: "0.056 M Sodium phosphate monobasic monohydrate" },
-            22: { salt: "None", buffer: "None", precipitant: "1.344 M Potassium phosphate dibasic" },
-            23: { salt: "None", buffer: "None", precipitant: "1.4 M Sodium citrate tribasic dihydrate" },
-            24: { salt: "None", buffer: "None", precipitant: "1.8 M Ammonium citrate tribasic pH 7.0" },
-            25: { salt: "None", buffer: "None", precipitant: "0.8 M Succinic acid pH 7.0" },
-            26: { salt: "None", buffer: "None", precipitant: "2.1 M DL-Malic acid pH 7.0" },
-            27: { salt: "None", buffer: "None", precipitant: "2.8 M Sodium acetate trihydrate pH 7.0" },
-            28: { salt: "None", buffer: "None", precipitant: "3.5 M Sodium formate pH 7.0" },
-            29: { salt: "None", buffer: "None", precipitant: "1.1 M Ammonium tartrate dibasic pH 7.0" },
-            30: { salt: "0.1 M Sodium chloride", buffer: "None", precipitant: "2.4 M Sodium malonate pH 7.0" },
-            31: { salt: "0.8 M Potassium sodium tartrate tetrahydrate", buffer: "None", precipitant: "35% v/v Tacsimate TM pH 7.0" },
-            32: { salt: "1.0 M Ammonium sulfate", buffer: "None", precipitant: "60% v/v Tacsimate TM pH 7.0" },
-            33: { salt: "1.1 M Sodium malonate pH 7.0", buffer: "None", precipitant: "1.5 M Ammonium sulfate" },
-            34: { salt: "1.0 M Succinic acid pH 7.0", buffer: "None", precipitant: "0.5% w/v Polyethylene glycol monomethyl ether 5,000" },
-            35: { salt: "1.0 M Ammonium sulfate", buffer: "None", precipitant: "1% w/v Polyethylene glycol 3,350" },
-            36: { salt: "15% v/v Tacsimate TM pH 7.0", buffer: "None", precipitant: "0.5% v/v Jeffamine ® ED-2001 pH 7.0" },
-            37: { salt: "None", buffer: "None", precipitant: "1% w/v Polyethylene glycol monomethyl ether 2,000" },
-            38: { salt: "None", buffer: "None", precipitant: "0.5% w/v Polyethylene glycol 8,000" },
-            39: { salt: "None", buffer: "None", precipitant: "2% w/v Polyethylene glycol 3,350" },
-            40: { salt: "None", buffer: "0.2 M Calcium chloride dihydrate", precipitant: "25% w/v Polyethylene glycol 1,500" },
-            41: { salt: "None", buffer: "0.1 M HEPES pH 7.5", precipitant: "30% v/v Jeffamine ® M-600 ® pH 7.0" },
-            42: { salt: "None", buffer: "None", precipitant: "30% v/v Jeffamine ® ED-2001 pH 7.0" },
-            43: { salt: "None", buffer: "0.1 M BIS-TRIS pH 6.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            44: { salt: "None", buffer: "0.1 M Tris pH 8.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            45: { salt: "None", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            46: { salt: "None", buffer: "0.1 M HEPES pH 7.0", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            47: { salt: "None", buffer: "0.1 M HEPES pH 7.0", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            48: { salt: "None", buffer: "0.1 M HEPES pH 7.0", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            49: { salt: "0.2 M Calcium chloride dihydrate", buffer: "0.1 M BIS-TRIS pH 6.5", precipitant: "45% v/v (+/-)-2-Methyl-2,4-pentanediol" },
-            50: { salt: "0.2 M Ammonium acetate", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "45% v/v (+/-)-2-Methyl-2,4-pentanediol" },
-            51: { salt: "0.2 M Ammonium acetate", buffer: "0.1 M BIS-TRIS pH 6.5", precipitant: "45% v/v (+/-)-2-Methyl-2,4-pentanediol" },
-            52: { salt: "0.2 M Ammonium acetate", buffer: "0.1 M HEPES pH 7.5", precipitant: "45% v/v (+/-)-2-Methyl-2,4-pentanediol" },
-            53: { salt: "0.2 M Ammonium acetate", buffer: "0.1 M Tris pH 8.5", precipitant: "45% v/v (+/-)-2-Methyl-2,4-pentanediol" },
-            54: { salt: "0.05 M Calcium chloride dihydrate", buffer: "0.1 M BIS-TRIS pH 6.5", precipitant: "30% v/v Polyethylene glycol monomethyl ether 550" },
-            55: { salt: "0.05 M Magnesium chloride hexahydrate", buffer: "0.1 M HEPES pH 7.5", precipitant: "30% v/v Polyethylene glycol monomethyl ether 550" },
-            56: { salt: "0.2 M Potassium chloride", buffer: "0.05 M HEPES pH 7.5", precipitant: "35% v/v Polyethylene glycol 400" },
-            57: { salt: "0.05 M Ammonium sulfate", buffer: "0.05 M BIS-TRIS pH 6.5", precipitant: "30% w/v Polyethylene glycol 600" },
-            58: { salt: "None", buffer: "0.1 M BIS-TRIS pH 6.5", precipitant: "45% v/v Polypropylene glycol P 400" },
-            59: { salt: "0.02 M Magnesium chloride hexahydrate", buffer: "0.1 M HEPES pH 7.5", precipitant: "22% w/v Poly(acrylic acid sodium salt) 5,100" },
-            60: { salt: "0.01 M Cobalt(II) chloride hexahydrate", buffer: "0.1 M Tris pH 8.5", precipitant: "20% w/v Polyvinylpyrrolidone K 15" },
-            61: { salt: "0.2 M L-Proline", buffer: "0.1 M HEPES pH 7.5", precipitant: "10% w/v Polyethylene glycol 3,350" },
-            62: { salt: "0.2 M Trimethylamine N-oxide dihydrate", buffer: "0.1 M Tris pH 8.5", precipitant: "20% w/v Polyethylene glycol monomethyl ether 2,000" },
-            63: { salt: "5% v/v Tacsimate TM pH 7.0", buffer: "0.1 M HEPES pH 7.0", precipitant: "10% w/v Polyethylene glycol monomethyl ether 5,000" },
-            64: { salt: "0.005 M Cobalt(II) chloride hexahydrate", buffer: "0.1 M HEPES pH 7.5", precipitant: "12% w/v Polyethylene glycol 3,350" },
-            65: { salt: "0.005 M Nickel(II) chloride hexahydrate", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "17% w/v Polyethylene glycol 10,000" },
-            66: { salt: "0.005 M Cadmium chloride hydrate", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            67: { salt: "0.005 M Magnesium chloride hexahydrate", buffer: "0.1 M BIS-TRIS pH 6.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            68: { salt: "0.1 M Ammonium acetate", buffer: "0.1 M HEPES pH 7.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            69: { salt: "0.2 M Ammonium sulfate", buffer: "0.1 M Tris pH 8.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            70: { salt: "0.2 M Ammonium sulfate", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            71: { salt: "0.2 M Ammonium sulfate", buffer: "0.1 M BIS-TRIS pH 6.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            72: { salt: "0.2 M Ammonium sulfate", buffer: "0.1 M HEPES pH 7.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            73: { salt: "0.2 M Sodium chloride", buffer: "0.1 M Tris pH 8.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            74: { salt: "0.2 M Sodium chloride", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            75: { salt: "0.2 M Sodium chloride", buffer: "0.1 M BIS-TRIS pH 6.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            76: { salt: "0.2 M Sodium chloride", buffer: "0.1 M HEPES pH 7.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            77: { salt: "0.2 M Lithium sulfate monohydrate", buffer: "0.1 M Tris pH 8.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            78: { salt: "0.2 M Lithium sulfate monohydrate", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            79: { salt: "0.2 M Lithium sulfate monohydrate", buffer: "0.1 M BIS-TRIS pH 6.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            80: { salt: "0.2 M Lithium sulfate monohydrate", buffer: "0.1 M HEPES pH 7.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            81: { salt: "0.2 M Ammonium acetate", buffer: "0.1 M Tris pH 8.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            82: { salt: "0.2 M Ammonium acetate", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            83: { salt: "0.2 M Ammonium acetate", buffer: "0.1 M BIS-TRIS pH 6.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            84: { salt: "0.2 M Ammonium acetate", buffer: "0.1 M HEPES pH 7.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            85: { salt: "0.2 M Magnesium chloride hexahydrate", buffer: "0.1 M Tris pH 8.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            86: { salt: "0.2 M Potassium sodium tartrate tetrahydrate", buffer: "None", precipitant: "20% w/v Polyethylene glycol 3,350" },
-            87: { salt: "0.2 M Sodium malonate pH 7.0", buffer: "None", precipitant: "20% w/v Polyethylene glycol 3,350" },
-            88: { salt: "0.2 M Ammonium citrate tribasic pH 7.0", buffer: "None", precipitant: "20% w/v Polyethylene glycol 3,350" },
-            89: { salt: "0.1 M Succinic acid pH 7.0", buffer: "None", precipitant: "15% w/v Polyethylene glycol 3,350" },
-            90: { salt: "0.2 M Sodium formate", buffer: "None", precipitant: "20% w/v Polyethylene glycol 3,350" },
-            91: { salt: "0.15 M DL-Malic acid pH 7.0", buffer: "None", precipitant: "20% w/v Polyethylene glycol 3,350" },
-            92: { salt: "0.1 M Magnesium formate dihydrate", buffer: "None", precipitant: "15% w/v Polyethylene glycol 3,350" },
-            93: { salt: "0.05 M Zinc acetate dihydrate", buffer: "None", precipitant: "20% w/v Polyethylene glycol 3,350" },
-            94: { salt: "0.2 M Sodium citrate tribasic dihydrate", buffer: "None", precipitant: "20% w/v Polyethylene glycol 3,350" },
-            95: { salt: "0.1 M Potassium thiocyanate", buffer: "None", precipitant: "30% w/v Polyethylene glycol monomethyl ether 2,000" },
-            96: { salt: "0.15 M Potassium bromide", buffer: "None", precipitant: "30% w/v Polyethylene glycol monomethyl ether 2,000" }
-        };
+    parseCSV(csvText) {
+        const lines = csvText.trim().split('\n');
+        console.log('Total lines in CSV:', lines.length);
+        // Skip header line: Well,Tube,Salt,Buffer ,Precipitant,Screen
+        for (let i = 1; i < lines.length; i++) {
+            const line = lines[i].trim();
+            if (!line) continue;
+
+            const fields = this.parseCSVLine(line);
+            if (fields.length < 6) {
+                console.log('Line', i, 'has insufficient fields:', fields.length, fields);
+                continue;
+            }
+
+            const tube = parseInt(fields[1], 10);
+            const salt = fields[2];
+            const buffer = fields[3];
+            const precipitant = fields[4];
+            const screen = fields[5];
+
+            if (i <= 3) {
+                console.log('Line', i, 'parsed:', {tube, salt, buffer, precipitant, screen});
+            }
+
+            if (!screen) continue;
+
+            if (!this.screens[screen]) {
+                this.screens[screen] = {
+                    name: screen,
+                    conditions: {}
+                };
+                console.log('Created new screen:', screen);
+            }
+
+            this.screens[screen].conditions[tube] = {
+                salt: salt || 'None',
+                buffer: buffer || 'None',
+                precipitant: precipitant || 'None'
+            };
+        }
+
+        // Set default screen to the first one found
+        const screenKeys = Object.keys(this.screens);
+        console.log('All screens found:', screenKeys);
+        if (screenKeys.length > 0) {
+            this.currentScreen = screenKeys[0];
+        }
     }
 
-    getJCSGConditions() {
-        // HR2-145 JCSG+ Reagent Formulations - mapping tube numbers (1-96) to conditions
-        return {
-            1: { salt: "0.2 M Lithium sulfate monohydrate", buffer: "0.1 M Sodium acetate trihydrate pH 4.5", precipitant: "50% v/v Polyethylene glycol 400" },
-            2: { salt: "None", buffer: "0.1 M Sodium citrate tribasic dihydrate pH 5.5", precipitant: "20% w/v Polyethylene glycol 3,000" },
-            3: { salt: "0.2 M Ammonium citrate dibasic", buffer: "None", precipitant: "20% w/v Polyethylene glycol 3,350" },
-            4: { salt: "0.02 M Calcium chloride dihydrate", buffer: "0.1 M Sodium acetate trihydrate pH 4.6", precipitant: "30% v/v (+/-)-2-Methyl-2,4-pentanediol" },
-            5: { salt: "0.2 M Magnesium formate dihydrate", buffer: "None", precipitant: "20% w/v Polyethylene glycol 3,350" },
-            6: { salt: "0.2 M Lithium sulfate monohydrate", buffer: "0.1 M Sodium citrate tribasic dihydrate pH 4.2", precipitant: "20% w/v Polyethylene glycol 1,000" },
-            7: { salt: "None", buffer: "0.1 M CHES pH 9.5", precipitant: "20% w/v Polyethylene glycol 8,000" },
-            8: { salt: "0.2 M Ammonium formate", buffer: "None", precipitant: "20% w/v Polyethylene glycol 3,350" },
-            9: { salt: "0.2 M Ammonium chloride", buffer: "None", precipitant: "20% w/v Polyethylene glycol 3,350" },
-            10: { salt: "0.2 M Potassium formate", buffer: "None", precipitant: "20% w/v Polyethylene glycol 3,350" },
-            11: { salt: "0.2 M Ammonium phosphate monobasic", buffer: "0.1 M Tris pH 8.5", precipitant: "50% v/v (+/-)-2-Methyl-2,4-pentanediol" },
-            12: { salt: "0.2 M Potassium nitrate", buffer: "None", precipitant: "20% w/v Polyethylene glycol 3,350" },
-            13: { salt: "None", buffer: "0.1 M Citric acid pH 4.0", precipitant: "0.8 M Ammonium sulfate" },
-            14: { salt: "0.2 M Sodium thiocyanate", buffer: "None", precipitant: "20% w/v Polyethylene glycol 3,350" },
-            15: { salt: "None", buffer: "0.1 M BICINE pH 9.0", precipitant: "20% w/v Polyethylene glycol 6,000" },
-            16: { salt: "None", buffer: "0.1 M HEPES pH 7.5", precipitant: "10% w/v Polyethylene glycol 8,000, 8% v/v Ethylene glycol" },
-            17: { salt: "None", buffer: "0.1 M Sodium cacodylate trihydrate pH 6.5", precipitant: "5% w/v Polyethylene glycol 8,000, 40% v/v (+/-)-2-Methyl-2,4-pentanediol" },
-            18: { salt: "None", buffer: "0.1 M Sodium citrate tribasic dihydrate pH 4.2", precipitant: "5% w/v Polyethylene glycol 1,000, 40% v/v Ethanol" },
-            19: { salt: "None", buffer: "0.1 M Sodium acetate trihydrate pH 4.6", precipitant: "8% w/v Polyethylene glycol 4,000" },
-            20: { salt: "0.2 M Magnesium chloride hexahydrate", buffer: "0.1 M Tris pH 7.0", precipitant: "10% w/v Polyethylene glycol 8,000" },
-            21: { salt: "None", buffer: "0.1 M Citric acid pH 5.0", precipitant: "20% w/v Polyethylene glycol 6,000" },
-            22: { salt: "0.2 M Magnesium chloride hexahydrate", buffer: "0.1 M Sodium cacodylate trihydrate pH 6.5", precipitant: "50% v/v Polyethylene glycol 200" },
-            23: { salt: "None", buffer: "None", precipitant: "1.6 M Sodium citrate tribasic dihydrate pH 6.5" },
-            24: { salt: "0.2 M Potassium citrate tribasic monohydrate", buffer: "None", precipitant: "20% w/v Polyethylene glycol 3,350" },
-            25: { salt: "0.2 M Sodium chloride", buffer: "0.1 M Sodium citrate tribasic dihydrate pH 4.2", precipitant: "20% w/v Polyethylene glycol 8,000" },
-            26: { salt: "1.0 M Lithium chloride", buffer: "0.1 M Citric acid pH 4.0", precipitant: "20% w/v Polyethylene glycol 6,000" },
-            27: { salt: "0.2 M Ammonium nitrate", buffer: "None", precipitant: "20% w/v Polyethylene glycol 3,350" },
-            28: { salt: "None", buffer: "0.1 M HEPES pH 7.0", precipitant: "10% w/v Polyethylene glycol 6,000" },
-            29: { salt: "None", buffer: "0.1 M HEPES sodium pH 7.5", precipitant: "0.8 M Sodium phosphate monobasic monohydrate, 0.8 M Potassium phosphate monobasic" },
-            30: { salt: "None", buffer: "0.1 M Sodium citrate tribasic dihydrate pH 4.2", precipitant: "40% v/v Polyethylene glycol 300" },
-            31: { salt: "0.2 M Zinc acetate dihydrate", buffer: "0.1 M Sodium acetate trihydrate pH 4.5", precipitant: "10% w/v Polyethylene glycol 3,000" },
-            32: { salt: "None", buffer: "0.1 M Tris pH 8.5", precipitant: "20% v/v Ethanol" },
-            33: { salt: "None", buffer: "0.068 M Sodium phosphate monobasic monohydrate, 0.032 M Potassium phosphate dibasic pH 6.2", precipitant: "10% v/v Glycerol, 25% v/v 1,2-Propanediol" },
-            34: { salt: "None", buffer: "0.1 M BICINE pH 9.0", precipitant: "2% v/v 1,4-Dioxane, 10% w/v Polyethylene glycol 20,000" },
-            35: { salt: "None", buffer: "0.1 M Sodium acetate trihydrate pH 4.6", precipitant: "2.0 M Ammonium sulfate" },
-            36: { salt: "None", buffer: "None", precipitant: "10% w/v Polyethylene glycol 1,000, 10% w/v Polyethylene glycol 8,000" },
-            37: { salt: "None", buffer: "None", precipitant: "24% w/v Polyethylene glycol 1,500, 20% v/v Glycerol" },
-            38: { salt: "0.2 M Magnesium chloride hexahydrate", buffer: "0.1 M HEPES sodium pH 7.5", precipitant: "30% v/v Polyethylene glycol 400" },
-            39: { salt: "0.2 M Sodium chloride", buffer: "0.068 M Sodium phosphate monobasic monohydrate, 0.032 M Potassium phosphate dibasic pH 6.2", precipitant: "50% v/v Polyethylene glycol 200" },
-            40: { salt: "0.2 M Lithium sulfate monohydrate", buffer: "0.1 M Sodium acetate trihydrate pH 4.5", precipitant: "30% w/v Polyethylene glycol 8,000" },
-            41: { salt: "None", buffer: "0.1 M HEPES pH 7.5", precipitant: "70% v/v (+/-)-2-Methyl-2,4-pentanediol" },
-            42: { salt: "0.2 M Magnesium chloride hexahydrate", buffer: "0.1 M Tris pH 8.5", precipitant: "20% w/v Polyethylene glycol 8,000" },
-            43: { salt: "0.2 M Lithium sulfate monohydrate", buffer: "0.1 M Tris pH 8.5", precipitant: "40% v/v Polyethylene glycol 400" },
-            44: { salt: "None", buffer: "0.1 M Tris pH 8.0", precipitant: "40% v/v (+/-)-2-Methyl-2,4-pentanediol" },
-            45: { salt: "0.17 M Ammonium sulfate", buffer: "None", precipitant: "25.5% w/v Polyethylene glycol 4,000, 15% v/v Glycerol" },
-            46: { salt: "0.2 M Calcium acetate hydrate", buffer: "0.1 M Sodium cacodylate trihydrate pH 6.5", precipitant: "40% v/v Polyethylene glycol 300" },
-            47: { salt: "0.14 M Calcium chloride dihydrate", buffer: "0.07 M Sodium acetate trihydrate pH 4.6", precipitant: "14% v/v 2-Propanol, 30% v/v Glycerol" },
-            48: { salt: "0.04 M Potassium phosphate monobasic", buffer: "None", precipitant: "16% w/v Polyethylene glycol 8,000, 20% v/v Glycerol" },
-            49: { salt: "None", buffer: "0.1 M Sodium cacodylate trihydrate pH 6.5", precipitant: "1.0 M Sodium citrate tribasic dihydrate" },
-            50: { salt: "0.2 M Sodium chloride", buffer: "0.1 M Sodium cacodylate trihydrate pH 6.5", precipitant: "2.0 M Ammonium sulfate" },
-            51: { salt: "0.2 M Sodium chloride", buffer: "0.1 M HEPES pH 7.5", precipitant: "10% v/v 2-Propanol" },
-            52: { salt: "0.2 M Lithium sulfate monohydrate", buffer: "0.1 M Tris pH 8.5", precipitant: "1.26 M Ammonium sulfate" },
-            53: { salt: "None", buffer: "0.1 M CAPS pH 10.5", precipitant: "40% v/v (+/-)-2-Methyl-2,4-pentanediol" },
-            54: { salt: "0.2 M Zinc acetate dihydrate", buffer: "0.1 M Imidazole pH 8.0", precipitant: "20% w/v Polyethylene glycol 3,000" },
-            55: { salt: "0.2 M Zinc acetate dihydrate", buffer: "0.1 M Sodium cacodylate trihydrate pH 6.5", precipitant: "10% v/v 2-Propanol" },
-            56: { salt: "None", buffer: "0.1 M Sodium acetate trihydrate pH 4.5", precipitant: "1.0 M Ammonium phosphate dibasic" },
-            57: { salt: "None", buffer: "0.1 M MES monohydrate pH 6.5", precipitant: "1.6 M Magnesium sulfate heptahydrate" },
-            58: { salt: "None", buffer: "0.1 M BICINE pH 9.0", precipitant: "10% w/v Polyethylene glycol 6,000" },
-            59: { salt: "0.16 M Calcium acetate hydrate", buffer: "0.08 M Sodium cacodylate trihydrate pH 6.5", precipitant: "14.4% w/v Polyethylene glycol 8,000, 20% v/v Glycerol" },
-            60: { salt: "None", buffer: "0.1 M Imidazole pH 8.0", precipitant: "10% w/v Polyethylene glycol 8,000" },
-            61: { salt: "0.05 M Cesium chloride", buffer: "0.1 M MES monohydrate pH 6.5", precipitant: "30% v/v Jeffamine® M-600®" },
-            62: { salt: "None", buffer: "0.1 M Citric acid pH 5.0", precipitant: "3.0 M Ammonium sulfate" },
-            63: { salt: "None", buffer: "0.1 M Tris pH 8.0", precipitant: "20% v/v (+/-)-2-Methyl-2,4-pentanediol" },
-            64: { salt: "None", buffer: "0.1 M HEPES pH 7.5", precipitant: "20% v/v Jeffamine® M-600®" },
-            65: { salt: "0.2 M Magnesium chloride hexahydrate", buffer: "0.1 M Tris pH 8.5", precipitant: "50% v/v Ethylene glycol" },
-            66: { salt: "None", buffer: "0.1 M BICINE pH 9.0", precipitant: "10% v/v (+/-)-2-Methyl-2,4-pentanediol" },
-            67: { salt: "None", buffer: "None", precipitant: "0.8 M Succinic acid pH 7.0" },
-            68: { salt: "None", buffer: "None", precipitant: "2.1 M DL-Malic acid pH 7.0" },
-            69: { salt: "None", buffer: "None", precipitant: "2.4 M Sodium malonate pH 7.0" },
-            70: { salt: "None", buffer: "0.1 M HEPES pH 7.0", precipitant: "1.1 M Sodium malonate pH 7.0" },
-            71: { salt: "None", buffer: "0.1 M HEPES pH 7.0", precipitant: "0.5% v/v Jeffamine® ED-2001 pH 7.0" },
-            72: { salt: "None", buffer: "0.1 M HEPES pH 7.0", precipitant: "1.0 M Succinic acid pH 7.0" },
-            73: { salt: "None", buffer: "0.1 M HEPES pH 7.0", precipitant: "1% w/v Polyethylene glycol monomethyl ether 2,000" },
-            74: { salt: "0.02 M Magnesium chloride hexahydrate", buffer: "0.1 M HEPES pH 7.5", precipitant: "30% v/v Jeffamine® M-600® pH 7.0" },
-            75: { salt: "0.01 M Cobalt(II) chloride hexahydrate", buffer: "0.1 M Tris pH 8.5", precipitant: "30% v/v Jeffamine® ED-2001 pH 7.0" },
-            76: { salt: "0.2 M Trimethylamine N-oxide dihydrate", buffer: "0.1 M Tris pH 8.5", precipitant: "22% w/v Poly(acrylic acid sodium salt) 5,100" },
-            77: { salt: "0.005 M Cobalt(II) chloride hexahydrate", buffer: "0.1 M HEPES pH 7.5", precipitant: "20% w/v Polyvinylpyrrolidone K 15" },
-            78: { salt: "0.005 M Nickel(II) chloride hexahydrate", buffer: "None", precipitant: "20% w/v Polyethylene glycol monomethyl ether 2,000" },
-            79: { salt: "0.005 M Cadmium chloride hydrate", buffer: "None", precipitant: "12% w/v Polyethylene glycol 3,350" },
-            80: { salt: "0.005 M Magnesium chloride hexahydrate", buffer: "None", precipitant: "20% w/v Polyethylene glycol 3,350" },
-            81: { salt: "0.2 M Sodium malonate pH 7.0", buffer: "None", precipitant: "15% w/v Polyethylene glycol 3,350" },
-            82: { salt: "0.1 M Succinic acid pH 7.0", buffer: "None", precipitant: "20% w/v Polyethylene glycol 3,350" },
-            83: { salt: "0.15 M DL-Malic acid pH 7.0", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "30% w/v Polyethylene glycol monomethyl ether 2,000" },
-            84: { salt: "0.1 M Potassium thiocyanate", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "30% w/v Polyethylene glycol monomethyl ether 2,000" },
-            85: { salt: "0.15 M Potassium bromide", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "2.0 M Ammonium sulfate" },
-            86: { salt: "None", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "3.0 M Sodium chloride" },
-            87: { salt: "None", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "0.3 M Magnesium formate dihydrate" },
-            88: { salt: "0.2 M Calcium chloride dihydrate", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "1.0 M Ammonium sulfate" },
-            89: { salt: "0.2 M Ammonium acetate", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "1% w/v Polyethylene glycol 3,350" },
-            90: { salt: "0.1 M Ammonium acetate", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            91: { salt: "0.2 M Ammonium sulfate", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "45% v/v (+/-)-2-Methyl-2,4-pentanediol" },
-            92: { salt: "0.2 M Sodium chloride", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "45% v/v (+/-)-2-Methyl-2,4-pentanediol" },
-            93: { salt: "0.2 M Lithium sulfate monohydrate", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "17% w/v Polyethylene glycol 10,000" },
-            94: { salt: "0.2 M Ammonium acetate", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            95: { salt: "0.2 M Magnesium chloride hexahydrate", buffer: "0.1 M BIS-TRIS pH 5.5", precipitant: "25% w/v Polyethylene glycol 3,350" },
-            96: { salt: "0.2 M Ammonium acetate", buffer: "0.1 M HEPES pH 7.5", precipitant: "25% w/v Polyethylene glycol 3,350" }
-        };
+    parseCSVLine(line) {
+        const fields = [];
+        let current = '';
+        let inQuotes = false;
+
+        for (let i = 0; i < line.length; i++) {
+            const char = line[i];
+            if (char === '"') {
+                inQuotes = !inQuotes;
+                // Don't include the quote character itself
+            } else if (char === ',' && !inQuotes) {
+                fields.push(current.trim());
+                current = '';
+            } else {
+                current += char;
+            }
+        }
+        fields.push(current.trim());
+        return fields;
+    }
+
+    populateScreenDropdown() {
+        const select = document.getElementById('screenSelect');
+        select.innerHTML = '';
+
+        const screenKeys = Object.keys(this.screens);
+        screenKeys.forEach((key) => {
+            const option = document.createElement('option');
+            option.value = key;
+            option.textContent = key;
+            select.appendChild(option);
+        });
+
+        if (screenKeys.length > 0) {
+            select.value = this.currentScreen;
+        }
     }
 
     createPlateGrid() {
         const plateGrid = document.getElementById('plateGrid');
+        plateGrid.innerHTML = '';
         const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
-        
+
         for (let rowIndex = 0; rowIndex < rows.length; rowIndex++) {
             const row = rows[rowIndex];
-            
+
             // Create row header
             const rowHeader = document.createElement('div');
             rowHeader.className = 'row-header';
             rowHeader.textContent = row;
             plateGrid.appendChild(rowHeader);
-            
+
             // Create wells for this row
             for (let col = 1; col <= 12; col++) {
                 const wellId = `${row}${col}`;
@@ -255,9 +150,9 @@ class ConditionCheckerApp {
                 well.dataset.tubeNumber = tubeNumber;
                 well.title = `Well ${wellId} (Tube ${tubeNumber})`;
                 well.textContent = wellId;
-                
+
                 well.addEventListener('click', () => this.selectWell(wellId, tubeNumber));
-                
+
                 plateGrid.appendChild(well);
             }
         }
@@ -273,42 +168,59 @@ class ConditionCheckerApp {
         document.getElementById('clearAll').addEventListener('click', () => {
             this.clearSelection();
         });
+
+        // Copy button
+        document.getElementById('copyConditions').addEventListener('click', () => {
+            this.copyConditionsToClipboard();
+        });
     }
 
     changeScreen(screenId) {
         this.currentScreen = screenId;
-        this.clearSelection();
-        this.updateScreenInfo();
+        // Don't clear selection - update visual state of wells
+        this.updateWellVisuals();
     }
 
-    updateScreenInfo() {
-        const screenInfo = document.getElementById('screenInfo');
-        const currentScreenData = this.screens[this.currentScreen];
+    updateWellVisuals() {
+        // Clear all visual selections first
+        document.querySelectorAll('.well.selected').forEach(well => {
+            well.classList.remove('selected');
+        });
         
-        if (currentScreenData) {
-            screenInfo.innerHTML = `
-                <span class="current-screen">Current Screen: <strong>${currentScreenData.name}</strong></span>
-            `;
-        }
+        // Re-apply selections for current screen
+        this.selectedWells.forEach(well => {
+            if (well.screen === this.currentScreen) {
+                const wellElement = document.querySelector(`[data-well-id="${well.wellId}"]`);
+                if (wellElement) {
+                    wellElement.classList.add('selected');
+                }
+            }
+        });
     }
 
     selectWell(wellId, tubeNumber) {
         const wellElement = document.querySelector(`[data-well-id="${wellId}"]`);
         if (!wellElement) return;
-        
-        // Check if well is already selected
-        const existingIndex = this.selectedWells.findIndex(w => w.wellId === wellId);
-        
+
+        // Check if well is already selected for current screen
+        const existingIndex = this.selectedWells.findIndex(w => 
+            w.wellId === wellId && w.screen === this.currentScreen
+        );
+
         if (existingIndex >= 0) {
             // Deselect well
             this.selectedWells.splice(existingIndex, 1);
             wellElement.classList.remove('selected');
         } else {
-            // Select well
-            this.selectedWells.push({ wellId, tubeNumber });
+            // Select well with current screen info
+            this.selectedWells.push({ 
+                wellId, 
+                tubeNumber,
+                screen: this.currentScreen
+            });
             wellElement.classList.add('selected');
         }
-        
+
         this.updateDisplay();
     }
 
@@ -322,36 +234,250 @@ class ConditionCheckerApp {
 
     updateDisplay() {
         const conditionText = document.getElementById('conditionText');
+        const selectionInfo = document.getElementById('selectionInfo');
+        const legend = document.getElementById('legend');
+        const legendContent = document.getElementById('legendContent');
+
+        // Update well count
+        selectionInfo.innerHTML = `<span class="well-count">${this.selectedWells.length} well${this.selectedWells.length !== 1 ? 's' : ''} selected</span>`;
 
         if (this.selectedWells.length === 0) {
             conditionText.innerHTML = 'Click on wells to see their crystallization conditions';
+            legend.style.display = 'none';
             return;
         }
 
-        const currentScreenData = this.screens[this.currentScreen];
-        let output = `<strong>${currentScreenData.name}</strong><br><br>`;
+        // Count component occurrences across all selected wells
+        const componentCounts = { salt: {}, buffer: {}, precipitant: {} };
         
-        this.selectedWells.forEach((well, index) => {
-            const { wellId, tubeNumber } = well;
-            const condition = currentScreenData.conditions[tubeNumber];
+        this.selectedWells.forEach(well => {
+            const screenData = this.screens[well.screen];
+            const condition = screenData?.conditions[well.tubeNumber];
             
             if (condition) {
-                output += `<strong>Well ${wellId} - Tube ${tubeNumber}</strong><br>`;
-                output += `<strong>Salt:</strong> ${condition.salt}<br>`;
-                output += `<strong>Buffer:</strong> ${condition.buffer}<br>`;
-                output += `<strong>Precipitant:</strong> ${condition.precipitant}`;
-            } else {
-                output += `<strong>Well ${wellId} - Tube ${tubeNumber}</strong><br>`;
-                output += `Condition data not found for this well in the selected screen.`;
-            }
-            
-            // Add break line between wells (but not after the last one)
-            if (index < this.selectedWells.length - 1) {
-                output += '<br><br>';
+                // Count each component type
+                ['salt', 'buffer', 'precipitant'].forEach(type => {
+                    const value = condition[type];
+                    if (value && value !== 'None') {
+                        componentCounts[type][value] = (componentCounts[type][value] || 0) + 1;
+                    }
+                });
             }
         });
+
+        // Assign colors to components that appear more than once
+        const colors = [
+            '#FFE6CC', '#FFCCCC', '#CCFFE6', '#CCE6FF', '#E6CCFF', 
+            '#FFFFCC', '#FFE6FF', '#E6FFFF', '#FFD9B3', '#FFB3B3',
+            '#B3FFD9', '#B3D9FF', '#D9B3FF', '#FFFFA3', '#FFD1FF'
+        ];
+        let colorIndex = 0;
+        const componentColors = {};
+        const componentsByType = { salt: [], buffer: [], precipitant: [] };
+
+        ['salt', 'buffer', 'precipitant'].forEach(type => {
+            Object.keys(componentCounts[type]).forEach(component => {
+                if (componentCounts[type][component] > 1) {
+                    const color = colors[colorIndex % colors.length];
+                    componentColors[component] = color;
+                    componentsByType[type].push({
+                        component: component,
+                        count: componentCounts[type][component],
+                        color: color
+                    });
+                    colorIndex++;
+                }
+            });
+        });
+
+        // Update legend with columns
+        const hasRepeatedComponents = componentsByType.salt.length > 0 || 
+                                      componentsByType.buffer.length > 0 || 
+                                      componentsByType.precipitant.length > 0;
+
+        if (hasRepeatedComponents) {
+            legend.style.display = 'block';
+            let legendHTML = '';
+            
+            ['salt', 'buffer', 'precipitant'].forEach(type => {
+                if (componentsByType[type].length > 0) {
+                    legendHTML += `<div class="legend-column">
+                        <div class="legend-column-header">${type.charAt(0).toUpperCase() + type.slice(1)}</div>`;
+                    
+                    componentsByType[type].forEach(info => {
+                        legendHTML += `<div class="legend-item">
+                            <span class="legend-color" style="background-color: ${info.color};"></span>
+                            <span class="legend-text">${info.component}</span>
+                            <span class="legend-count">(${info.count}×)</span>
+                        </div>`;
+                    });
+                    
+                    legendHTML += '</div>';
+                }
+            });
+            
+            legendContent.innerHTML = legendHTML;
+        } else {
+            legend.style.display = 'none';
+        }
+
+        // Helper function to highlight components
+        const highlightComponent = (value) => {
+            if (componentColors[value]) {
+                return `<span style="background-color: ${componentColors[value]}; padding: 2px 4px; border-radius: 3px; font-weight: 500;">${value}</span>`;
+            }
+            return value;
+        };
+
+        // Group wells by screen
+        const wellsByScreen = {};
+        this.selectedWells.forEach(well => {
+            if (!wellsByScreen[well.screen]) {
+                wellsByScreen[well.screen] = [];
+            }
+            wellsByScreen[well.screen].push(well);
+        });
+
+        let output = '';
         
+        // Display each screen's wells grouped together
+        Object.keys(wellsByScreen).forEach((screenName, screenIndex) => {
+            const screenData = this.screens[screenName];
+            const wells = wellsByScreen[screenName];
+            
+            // Screen header
+            output += `<div class="screen-group">`;
+            output += `<div class="screen-header">${screenName}</div>`;
+            
+            wells.forEach((well) => {
+                const { wellId, tubeNumber } = well;
+                const condition = screenData?.conditions[tubeNumber];
+
+                output += `<div class="condition-item">`;
+                if (condition) {
+                    output += `<div class="well-label">Well ${wellId} - Tube ${tubeNumber}</div>`;
+                    output += `<div class="condition-row"><span class="condition-label">Salt:</span> ${highlightComponent(condition.salt)}</div>`;
+                    output += `<div class="condition-row"><span class="condition-label">Buffer:</span> ${highlightComponent(condition.buffer)}</div>`;
+                    output += `<div class="condition-row"><span class="condition-label">Precipitant:</span> ${highlightComponent(condition.precipitant)}</div>`;
+                } else {
+                    output += `<div class="well-label">Well ${wellId} - Tube ${tubeNumber}</div>`;
+                    output += `<div class="condition-row">Condition data not found for this well.</div>`;
+                }
+                output += `</div>`;
+            });
+            
+            output += '</div>';
+        });
+
         conditionText.innerHTML = output;
+    }
+
+    copyConditionsToClipboard() {
+        if (this.selectedWells.length === 0) {
+            return;
+        }
+
+        // Count component occurrences for the repeated components section
+        const componentCounts = { salt: {}, buffer: {}, precipitant: {} };
+        
+        this.selectedWells.forEach(well => {
+            const screenData = this.screens[well.screen];
+            const condition = screenData?.conditions[well.tubeNumber];
+            
+            if (condition) {
+                ['salt', 'buffer', 'precipitant'].forEach(type => {
+                    const value = condition[type];
+                    if (value && value !== 'None') {
+                        componentCounts[type][value] = (componentCounts[type][value] || 0) + 1;
+                    }
+                });
+            }
+        });
+
+        // Build repeated components by type
+        const componentsByType = { salt: [], buffer: [], precipitant: [] };
+        ['salt', 'buffer', 'precipitant'].forEach(type => {
+            Object.keys(componentCounts[type]).forEach(component => {
+                if (componentCounts[type][component] > 1) {
+                    componentsByType[type].push({
+                        component: component,
+                        count: componentCounts[type][component]
+                    });
+                }
+            });
+        });
+
+        // Generate plain text version for clipboard
+        let textOutput = 'CRYSTALLIZATION CONDITIONS\n\n';
+
+        // Add repeated components section if any exist
+        const hasRepeatedComponents = componentsByType.salt.length > 0 || 
+                                      componentsByType.buffer.length > 0 || 
+                                      componentsByType.precipitant.length > 0;
+
+        if (hasRepeatedComponents) {
+            textOutput += 'Repeated Components:\n\n';
+            
+            ['salt', 'buffer', 'precipitant'].forEach(type => {
+                if (componentsByType[type].length > 0) {
+                    textOutput += `${type.charAt(0).toUpperCase() + type.slice(1)}:\n`;
+                    componentsByType[type].forEach(info => {
+                        textOutput += `\t• ${info.component} (appears ${info.count} times)\n`;
+                    });
+                    textOutput += '\n';
+                }
+            });
+            
+            textOutput += '─'.repeat(70) + '\n\n';
+        }
+
+        // Add well conditions grouped by screen
+        const wellsByScreen = {};
+        this.selectedWells.forEach(well => {
+            if (!wellsByScreen[well.screen]) {
+                wellsByScreen[well.screen] = [];
+            }
+            wellsByScreen[well.screen].push(well);
+        });
+        
+        Object.keys(wellsByScreen).forEach((screenName) => {
+            const screenData = this.screens[screenName];
+            const wells = wellsByScreen[screenName];
+            
+            textOutput += `Screen: ${screenName}\n\n`;
+            
+            wells.forEach((well) => {
+                const { wellId, tubeNumber } = well;
+                const condition = screenData?.conditions[tubeNumber];
+
+                if (condition) {
+                    textOutput += `Well ${wellId} - Tube ${tubeNumber}\n`;
+                    textOutput += `\tSalt:\t\t${condition.salt}\n`;
+                    textOutput += `\tBuffer:\t\t${condition.buffer}\n`;
+                    textOutput += `\tPrecipitant:\t${condition.precipitant}\n\n`;
+                } else {
+                    textOutput += `Well ${wellId} - Tube ${tubeNumber}\n`;
+                    textOutput += `\tCondition data not found\n\n`;
+                }
+            });
+        });
+
+        // Copy to clipboard
+        navigator.clipboard.writeText(textOutput).then(() => {
+            // Show feedback
+            const copyBtn = document.getElementById('copyConditions');
+            const originalText = copyBtn.innerHTML;
+            copyBtn.innerHTML = '✓ Copied!';
+            copyBtn.style.backgroundColor = '#28a745';
+            
+            setTimeout(() => {
+                copyBtn.innerHTML = originalText;
+                copyBtn.style.backgroundColor = '';
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy:', err);
+            alert('Failed to copy to clipboard');
+        });
     }
 }
 
