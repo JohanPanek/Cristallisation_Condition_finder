@@ -16,7 +16,7 @@ class ConditionCheckerApp {
 
     async loadCSVData() {
         try {
-            const response = await fetch('Scree_condition_table.csv');
+            const response = await fetch('data/Scree_condition_table.csv');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

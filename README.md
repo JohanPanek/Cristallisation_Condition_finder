@@ -84,11 +84,14 @@ A modern web-based application for tracking and analyzing crystallization condit
 
 ```
 Cristallisation_Condition_finder/
-├── index.html                    # Main HTML structure
-├── styles.css                    # CSS styling and layout
-├── script.js                     # JavaScript functionality
-├── Scree_condition_table.csv    # Condition database (all screens)
-└── README.md                     # This documentation
+├── crystallization-screening.html   # Main application page
+├── css/
+│   └── styles.css                   # Styling and layout
+├── js/
+│   └── script.js                    # Application logic
+├── data/
+│   └── Scree_condition_table.csv   # Condition database (all screens)
+└── README.md                        # This documentation
 ```
 
 ## Condition Data
